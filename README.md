@@ -3,9 +3,8 @@
 
 Phonegap plugin for check or launch other application, get extras in phonegap app.
 
-> Install: ```cordova plugin add com.lampa.startapp```
 > 
-> Install: ```cordova plugin add https://github.com/lampaa/com.lampa.startapp.git```
+> Install: ```cordova plugin add https://github.com/semisleep/com.lampa.startapp.git```
 > 
 > Delete:  ```cordova plugin rm com.lampa.startapp```
 > 
