@@ -136,6 +136,14 @@ public class startApp extends CordovaPlugin {
 				if(params.has("category")) {
 					LaunchIntent.addCategory(getIntentValueString(params.getString("category")));	
 				}
+				
+				/**
+				 * set type
+				 * http://developer.android.com/intl/ru/reference/android/content/Intent.html#setType%28java.lang.String%29
+				 */
+				if(params.has("type")) {
+					LaunchIntent.setType(params.getString("type"));	
+				}
 								
 				/**
 				 * set data (uri)
@@ -145,13 +153,9 @@ public class startApp extends CordovaPlugin {
 					LaunchIntent.setData(Uri.parse(params.getString("uri")));
 				}
 				
-				/**
-				 * set type
-				 * http://developer.android.com/intl/ru/reference/android/content/Intent.html#setType%28java.lang.String%29
-				 * NOTE: set type after data, so that the type will not be override!!!
-				 */
-				if(params.has("type")) {
-					LaunchIntent.setType(params.getString("type"));	
+				// set data & type
+				if(params.has("uri") && params.has("type")) {
+					LaunchIntent.setDataAndType(Uri.parse(params.getString("uri")), params.getString("type"));	
 				}
 				
 				/**
