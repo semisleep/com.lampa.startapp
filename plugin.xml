@@ -22,21 +22,21 @@
                 <param name="android-package" value="com.lampa.startapp.startApp"/>
             </feature>
         </config-file>
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-		<provider
-			android:name="android.support.v4.content.FileProvider"
-			android:authorities="icom.lampa.startapp.provider"
-			android:exported="false"
-			android:grantUriPermissions="true" >
-		<meta-data
-			android:name="android.support.FILE_PROVIDER_PATHS"
-			xmlns:aapt="http://schemas.android.com/aapt">
-				<aapt:attr name="android:resource" >
-					<paths><external-path name="exports" path="Android/"/></paths>
-				</aapt:attr>
-		</meta-data>
-		</provider>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
         </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    		<provider
+    			android:name="android.support.v4.content.FileProvider"
+    			android:authorities="${applicationId}.provider"
+    			android:exported="false"
+    			android:grantUriPermissions="true" >
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths" />
+    		</provider>
+        </config-file>
+        <source-file src="src/android/file_paths.xml" target-dir="res/xml" />
         <source-file src="src/android/startApp.java" target-dir="src/com/lampa/startapp" />
     </platform>
 
