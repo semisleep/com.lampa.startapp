@@ -13,7 +13,7 @@
         <merges target="startApp" />
     </js-module>
 
-<dependency id="android.support.v4" url="https://github.com/floatinghotpot/cordova-plugin-android-support-v4.git" commit="be140fb103f87faa2a2da8268dbec1d93e32790d"  />
+<dependency id="cordova-plugin-android-support-v4-jar" url="https://github.com/pbakondy/cordova-plugin-android-support-v4-jar.git" commit="674e96d80ce52e47cd3df755329a47d61e247138"  />
 	
     <!-- android -->
     <platform name="android">
