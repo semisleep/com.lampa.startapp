@@ -13,6 +13,8 @@
         <merges target="startApp" />
     </js-module>
 
+<dependency id="android.support.v4" url="https://github.com/floatinghotpot/cordova-plugin-android-support-v4.git"  />
+	
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
